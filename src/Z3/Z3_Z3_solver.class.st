@@ -6,6 +6,12 @@ Class {
 	#tag : 'Base'
 }
 
+{ #category : 'as yet unclassified' }
+Z3_Z3_solver class >> makeSolver: context [
+
+	^ LibZ3 uniqueInstance z3_mk_solver: context
+]
+
 { #category : 'finalizing' }
 Z3_Z3_solver >> dispose [
 

@@ -3742,7 +3742,7 @@ LibZ3 >> z3_mk_andC: c num_args: num_args args: args [
 	 def_API('Z3_mk_and', AST, (_in(CONTEXT), _in(UINT), _in_array(1, AST)))
 	 */"
 
-	self ffiCall: #(Z3_ast Z3_mk_and(Z3_context c, uint num_args, const Z3_ast_0 args))
+	self ffiCall: #(Z3_ast Z3_mk_and(Z3_context c, uint num_args, Z3_ast* args))
 ]
 
 { #category : 'public' }

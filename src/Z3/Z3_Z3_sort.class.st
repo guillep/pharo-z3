@@ -6,6 +6,12 @@ Class {
 	#tag : 'Base'
 }
 
+{ #category : 'as yet unclassified' }
+Z3_Z3_sort class >> makeBoolSort: ctx [
+
+	^ LibZ3 uniqueInstance z3_mk_bool_sort: ctx
+]
+
 { #category : 'finalizing' }
 Z3_Z3_sort >> dispose [
 
