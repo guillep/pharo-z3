@@ -10,11 +10,15 @@ Class {
 Z3Bool >> and: aZ3Bool [
 
 	| newLowLevelAST args |
-	args := (FFIArray ofType: Z3_Z3_ast size:2)
+	args := "(Array new: 2)
 		        at: 1 put: self lowLevelAST;
 		        at: 2 put: aZ3Bool lowLevelAST;
-		        yourself.
-		"doesn't work :(, we have to fight a way to declare an array with the 2 booleans and call the function on them both."
+		        yourself."
+	"(FFIArray ofType: Z3_Z3_ast size:2)
+		        at: 1 put: self lowLevelAST;
+		        at: 2 put: aZ3Bool lowLevelAST;
+		        yourself."
+	"doesn't work :(, we have to find a way to declare an array with the 2 booleans and call the function on them both."
 	newLowLevelAST := LibZ3 uniqueInstance
 		                  z3_mk_andC: context
 		                  num_args: 2

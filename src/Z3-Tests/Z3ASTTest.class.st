@@ -11,5 +11,6 @@ Class {
 
 { #category : 'running' }
 Z3ASTTest >> setUp [
-	super setUp.
+
+	super setUp
 ]
